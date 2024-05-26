@@ -1,0 +1,17 @@
+//schema
+numberOfHeart: Int 
+numberOfSmile: Int 
+numberOfLaugh: Int 
+numberOfThumbUp: Int 
+numberOfThumbDown: Int 
+numberOfAngry: Int 
+numberOfMean: Int
+
+// prisma
+numberOfHeart     Int     @default(0)
+numberOfSmile     Int     @default(0)
+numberOfLaugh     Int     @default(0)
+numberOfThumbUp   Int     @default(0)
+numberOfThumbDown Int     @default(0)
+numberOfAngry     Int     @default(0)
+numberOfMean      Int     @default(0)

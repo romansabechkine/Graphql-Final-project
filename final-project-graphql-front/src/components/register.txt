@@ -1,0 +1,74 @@
+import { useRef } from 'react';
+import { gql } from '../__generated__';
+import { useMutation } from '@apollo/client';
+
+
+const Register = () => {
+
+    // using userRef in order to avoid triggering rerenders
+    const username = useRef<HTMLInputElement>(null);
+    const password = useRef<HTMLInputElement>(null);
+
+  const onSubmitHandler = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Name value: " + username.current?.value);
+    console.log("Password value: " + password.current?.value);
+  };
+
+  const REGISTER = gql(`
+    mutation Mutation($username: String!, $password: String!) {
+        createUser(username: $username, password: $password) {
+            code
+            success
+            message
+            user {
+                id
+                username
+            }
+        }
+    }`);
+
+
+
+  return (
+    <div className="signUpContainer">
+    <form onSubmit={onSubmitHandler}>
+    <h2>Create an account</h2>
+      <div className="registerForm">
+
+        <label htmlFor="username">Name</label>
+        <input  id="name"  type="text"  name="name" ref={username}  />
+
+        <label htmlFor="password">Password</label>
+        <input  id="password"  type="password"   name="password" ref={password}   />
+
+     <button>Register</button>
+      </div>
+    </form>
+    </div>
+
+    const [register, { data, loading, error }] = useMutation(REGISTER {
+        variables: {
+
+        }
+    });
+
+    const [addTodo, { data, loading, error }] = useMutation(ADD_TODO, {
+        variables: {
+          type: "placeholder",
+          someOtherVariable: 1234,
+        },
+      });
+
+      if (loading) {
+        return <div>loading</div>
+      }
+  
+      if (error) {
+        return <div>error</div>
+      }
+  );
+
+};
+
+export default Register;
