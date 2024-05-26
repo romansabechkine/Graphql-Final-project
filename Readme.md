@@ -4,22 +4,22 @@
 
 **Functionalities:**
 
-###Backend:
-**User:** Creation, SignIn with a Session expiring in 600 minutes, SignOut, Delete
-**Article:** CRUD
-**Comment:** CRUD
-**Like:** Create, Delete
+### Backend:
+**User:** Creation, SignIn with a Session expiring in 600 minutes, SignOut, Delete <br />
+**Article:** CRUD <br />
+**Comment:** CRUD <br />
+**Like:** Create, Delete <br />
 
-###Frontend:
-**User** Register, SignIn, SignOut
-**Article** Create article, read all articles
+### Frontend:
+**User** Register, SignIn, SignOut <br />
+**Article** Create article, read all articles <br />
 
 Cons: 
 1. The Frontend is not completely made: there are functionalities missing like: read, update, delete article. The same is relevant for comments and likes.
 2. The frontend styling is completely missing.
 
 Pros:
-1. In my opinion the backend is made.
+1. In my opinion the backend is made. 
 2. The communication between front and back is working 
 
 
@@ -37,7 +37,7 @@ Open a terminal window
 4. npm run generate
 5. npm run dev
 
-Open a new terminal window 
+Open another terminal window 
 
 6. cd final-project-graphql-front
 7. npm i
